@@ -1,56 +1,64 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Linkedin, User } from 'lucide-react';
 
-const experts = [
-  { name: 'Alya Pratama', role: 'RFID Solutions Architect', avatar: null, linkedin: '#' },
-  { name: 'Rizky Mahendra', role: 'Field Engineering Lead', avatar: null, linkedin: '#' },
-  { name: 'Nadia Putri', role: 'Project Manager', avatar: null, linkedin: '#' },
+const team = [
+  { name: 'Aisha Rahman', role: 'RFID Solutions Architect', linkedin: '#' },
+  { name: 'Kenji Sato', role: 'Hardware Engineering Lead', linkedin: '#' },
+  { name: 'Laura Mendes', role: 'Implementation Manager', linkedin: '#' },
+  { name: 'Tariq Hassan', role: 'Software Platform Lead', linkedin: '#' },
 ];
 
 const TeamContact = () => {
   return (
-    <section id="team" className="bg-[#0d203f] py-20 text-white">
+    <section id="team" className="py-20 bg-[#f8fafc]">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-10">
-          <h2 className="text-2xl font-bold md:text-3xl">Meet the Experts</h2>
-          <p className="mt-2 max-w-2xl text-white/70">Our team brings deep experience in RFID hardware, middleware, and enterprise integrations.</p>
+        <div className="text-center">
+          <h2 style={{ fontFamily: 'roc-grotesk, sans-serif' }} className="text-3xl md:text-4xl text-[#132B4F]">Meet the Experts</h2>
+          <p style={{ fontFamily: 'gopher, sans-serif' }} className="mt-2 text-[#132B4F]/70">Experienced engineers and consultants delivering end-to-end RFID success.</p>
         </div>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {experts.map((e) => (
-            <div key={e.name} className="rounded-xl border border-white/10 bg-white/5 p-6">
-              <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#132B4F] text-[#F4B414]">
-                  <User size={20} />
-                </div>
-                <div>
-                  <div className="font-semibold">{e.name}</div>
-                  <div className="text-sm text-white/70">{e.role}</div>
-                </div>
+
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {team.map((m) => (
+            <div key={m.name} className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+              <div className="h-12 w-12 rounded-full bg-[#132B4F] text-white grid place-items-center">
+                <User className="size-6" />
               </div>
-              <a href={e.linkedin} className="mt-4 inline-flex items-center gap-2 text-sm text-[#F4B414] hover:underline">
-                <Linkedin size={16} /> Connect
+              <h3 style={{ fontFamily: 'roc-grotesk, sans-serif' }} className="mt-4 text-lg text-[#132B4F]">{m.name}</h3>
+              <p style={{ fontFamily: 'gopher, sans-serif' }} className="text-sm text-[#132B4F]/70">{m.role}</p>
+              <a href={m.linkedin} target="_blank" rel="noreferrer" className="mt-3 inline-flex items-center gap-1 text-sm text-[#132B4F]">
+                <Linkedin className="size-4" /> Connect
               </a>
             </div>
           ))}
         </div>
 
-        <div id="contact" className="mt-16 rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02] p-6">
-          <h3 className="text-xl font-semibold">Contact Divitech</h3>
-          <p className="mt-2 max-w-2xl text-white/70">Tell us about your processes and objectives—our engineers will propose the right RFID architecture for your environment.</p>
-          <form className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
-            <input className="w-full rounded-md border border-white/10 bg-transparent px-3 py-2 text-white placeholder-white/50 focus:border-[#F4B414] focus:outline-none" placeholder="Full name" />
-            <input type="email" className="w-full rounded-md border border-white/10 bg-transparent px-3 py-2 text-white placeholder-white/50 focus:border-[#F4B414] focus:outline-none" placeholder="Work email" />
-            <input className="w-full rounded-md border border-white/10 bg-transparent px-3 py-2 text-white placeholder-white/50 focus:border-[#F4B414] focus:outline-none" placeholder="Company" />
-            <input className="w-full rounded-md border border-white/10 bg-transparent px-3 py-2 text-white placeholder-white/50 focus:border-[#F4B414] focus:outline-none" placeholder="Phone" />
-            <textarea className="md:col-span-2 h-28 w-full rounded-md border border-white/10 bg-transparent px-3 py-2 text-white placeholder-white/50 focus:border-[#F4B414] focus:outline-none" placeholder="Project brief"></textarea>
-            <div className="md:col-span-2 flex items-center justify-between">
-              <div className="flex flex-wrap items-center gap-4 text-white/70 text-sm">
-                <span className="inline-flex items-center gap-2"><Mail size={16}/> sales@divitech.com</span>
-                <span className="inline-flex items-center gap-2"><Phone size={16}/> +1 (555) 123‑4567</span>
-                <span className="inline-flex items-center gap-2"><MapPin size={16}/> Worldwide</span>
-              </div>
-              <button type="button" className="rounded-md bg-[#F4B414] px-5 py-2 font-semibold text-[#132B4F] hover:brightness-95">Send</button>
+        <div id="contact" className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+            <h3 style={{ fontFamily: 'roc-grotesk, sans-serif' }} className="text-xl text-[#132B4F]">Contact</h3>
+            <div className="mt-4 space-y-3 text-sm text-[#132B4F]/80">
+              <p className="flex items-center gap-2"><Mail className="size-4 text-[#F4B414]" /> hello@divitech.com</p>
+              <p className="flex items-center gap-2"><Phone className="size-4 text-[#F4B414]" /> +1 (555) 123-4567</p>
+              <p className="flex items-center gap-2"><MapPin className="size-4 text-[#F4B414]" /> Singapore • Dubai • London</p>
             </div>
+          </div>
+          <form className="lg:col-span-2 rounded-xl border border-gray-200 bg-white p-6 shadow-sm space-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm text-[#132B4F]/70">Name</label>
+                <input type="text" className="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2 outline-none focus:border-[#132B4F]" placeholder="Jane Cooper" />
+              </div>
+              <div>
+                <label className="block text-sm text-[#132B4F]/70">Email</label>
+                <input type="email" className="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2 outline-none focus:border-[#132B4F]" placeholder="jane@company.com" />
+              </div>
+            </div>
+            <div>
+              <label className="block text-sm text-[#132B4F]/70">Message</label>
+              <textarea rows="4" className="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2 outline-none focus:border-[#132B4F]" placeholder="Tell us about your project..." />
+            </div>
+            <button type="submit" className="inline-flex items-center justify-center rounded-md bg-[#F4B414] px-5 py-2.5 text-[#132B4F] font-medium hover:brightness-95">
+              Send Message
+            </button>
           </form>
         </div>
       </div>
